@@ -1,1 +1,1 @@
-
+Hoy en día en México demasiadas personas se encuentran en buró de crédito,  están en este estado por diversos factores, uno de ellos es por mala administración de gastos, actualmente es recomendable tener un control de gastos ya que poseer una buena administración de todos los ingresos y egresos nos dará más facilidad de identificar, reducir o eliminar aquellos gastos que no son necesarios y asi poder posponerlos o eliminarlos, asi  ofreciendo más tranquilidad y principalmente una mejor estabilidad esconómica.
