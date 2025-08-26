@@ -1,1 +1,5 @@
-Este es el simulador de deuda
+Mi parte del proyecto respecto a las finanzas personales va a ser el simulador e deudas y coimo van cambiando las cuotas segun los plazos y los interes, y lo vamos a hacer de tal manera para que las personas puedan ver y entender cómo cambian sus pagos dependiendo de cuánto pide prestado, la tasa de interés y el tiempo que elige para pagar. 
+
+La idea del programa es que el ususario pueda escribir la cantidad de su deuda, su interes, y el plazo en meses y en base a esta informacion, el programa le va a muestrar cuánto tendría que pagar en cada cuota ya se mensual o quincenal. Lo que va a hacer interesante es que el usuario va a poder entender que si quiere pagar una x cantidad a mas meses, pues al final va a pagar mas porque los intereses van a subir pero si realiza un plazo de menos meses, al final va a pagar una manor cuota. 
+
+Entonces para resumir es un programa que ayuda al usuario a comparar distintos escenarios para decidir cuál opción es más conveniente y así tomar mejores decisiones con el dinero.
