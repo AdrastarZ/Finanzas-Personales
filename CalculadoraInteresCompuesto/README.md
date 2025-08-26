@@ -1,4 +1,4 @@
-Atena Arlet Girón Ortiz. A01710866
+AA_GOIP
 
 INTERÉS COMPUESTO
 
