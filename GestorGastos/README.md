@@ -3,6 +3,7 @@ Una aplicación que gestiona gastos sirve para llevar el control del dinero que 
 
 1.Registro de ingresos y egresos:
 Permite anotar cada gasto o ingreso con detalles como monto, categoría (comida, transporte, ocio, etc.) y fecha.
+
 2.Presupuestos y metas:
 Deja establecer un límite de gasto mensual o metas de ahorro, avisando si se está por superar.
 
