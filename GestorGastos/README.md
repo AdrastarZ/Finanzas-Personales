@@ -6,5 +6,3 @@ Permite anotar cada gasto o ingreso con detalles como monto, categoría (comida,
 2.Presupuestos y metas:
 Deja establecer un límite de gasto mensual o metas de ahorro, avisando si se está por superar.
 
-3.Alertas y recordatorios
-Envía notificaciones de pagos próximos o de gastos inusuales.
