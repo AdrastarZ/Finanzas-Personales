@@ -1,5 +1,4 @@
-#Imanol Salazar Loranca
-#A01714119
+
 import datetime
 
 # -------------------- Variables globales --------------------
@@ -197,3 +196,4 @@ def main():
 # -------------------- Punto de entrada --------------------
 if __name__ == "__main__":
     main()
+
