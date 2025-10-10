@@ -3,6 +3,7 @@ from GestorGastos.Gestor_de_gastos import gestor_de_gastos
 def menu():
     print("\n--- Menú Principal ---")
     print("3.Gestor de gastos")
+    print("4. Simulador de deuda")
     print("5.Salir")
 
 
@@ -13,6 +14,7 @@ def main ():
 
     elif opcion == 3:
       gestor_de_gastos()
+      
     elif opcion ==5:
       break
     else:
