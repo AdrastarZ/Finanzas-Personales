@@ -9,7 +9,7 @@ def menu():
 def main ():
   while True:
     print(menu)
-    opcion=int(input("Ingresa una opcion")
+    opcion=int(input("Ingresa una opcion"))
 
     elif opcion == 3:
       gestor_de_gastos()
