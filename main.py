@@ -14,6 +14,9 @@ def main ():
 
     elif opcion == 3:
       gestor_de_gastos()
+
+    elif opcion == 4:
+         
       
     elif opcion ==5:
       break
