@@ -192,6 +192,8 @@ def gestor_de_gastos():
             print("Opción inválida. Intenta de nuevo.")
 
 
-gestor_de_gastos()
+if __name__ == "__main__":
+    gestor_de_gastos()
+
 
 
