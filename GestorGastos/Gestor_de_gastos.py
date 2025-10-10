@@ -145,11 +145,6 @@ def caso_prueba_demo():
     print(f"Balance esperado: 1550, calculado: {balance}")
     print("=== FIN DEL CASO DE PRUEBA ===\n")
 
-
-# Para ejecutar este caso de prueba, solo llama:
-caso_prueba_demo()
-
-
 # -------------------- Menú interactivo --------------------
 def menu():
     """
@@ -194,6 +189,7 @@ def gestor_de_gastos():
 
 if __name__ == "__main__":
     gestor_de_gastos()
+
 
 
 
