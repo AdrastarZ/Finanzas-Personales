@@ -166,7 +166,7 @@ def menu():
     return input("Elige una opción: ")
 
 
-def main():
+def gestor_de_gastos():
     """
     Bucle principal del programa (while infinito hasta salir).
     Usa estructuras de decisión para llamar a cada función según la opción.
@@ -193,5 +193,6 @@ def main():
 
 
 # -------------------- Punto de entrada --------------------
-if __name__ == "__main__":
-    main()
+if __name__ == "__gestor_de_gastos__":
+    gestor_de_gastos()
+
