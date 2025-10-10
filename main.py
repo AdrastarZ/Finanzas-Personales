@@ -8,7 +8,7 @@ def menu():
 
 def main ():
   while True:
-    print(menu)
+    menu()
     opcion=int(input("Ingresa una opcion"))
 
     elif opcion == 3:
