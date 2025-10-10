@@ -192,7 +192,6 @@ def gestor_de_gastos():
             print("Opción inválida. Intenta de nuevo.")
 
 
-# -------------------- Punto de entrada --------------------
-if __name__ == "__gestor_de_gastos__":
-    gestor_de_gastos()
+gestor_de_gastos()
+
 
