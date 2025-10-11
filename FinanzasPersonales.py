@@ -1,6 +1,9 @@
 from GestorGastos.Gestor_de_gastos import gestor_de_gastos
 from CalculadoraInteresCompuesto import interes_compuesto
 
+#Listas para guardar historial de operaciones 
+historial_prestamos = [] # se guardarán los datos de los préstamos realizados
+historial_inversiones = [] # se guardarán los datos de las inversiones realizadas
 def main():
     while True:
         print("\nMENÚ PRINCIPAL")
