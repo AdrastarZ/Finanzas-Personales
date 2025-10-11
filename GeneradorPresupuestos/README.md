@@ -8,7 +8,5 @@ Entre sus aplicaciones se encuentran la elaboración de cotizaciones para empres
 
 Funcionalidades:
     1. Definir a detalle las areas de gasto y su cantidad
-    
     2. El porcentaje que se gasta y comparacion con el capital inicial
-    
     3. Descubrir si hay capital sobrante despues del presupuesto establecido
