@@ -10,9 +10,9 @@ def main():
         print("3. Gestor de gastos")
         print("4. Simulador de deuda")
         print("5. Salir")
-        opcion = input("Elige una de las opciones: ")
+        codigo = input("Elige una de las opciones: ")
 
-        if opcion =="1":
+        if codigo =="1":
               while True:
                 interes_compuesto.menu_Calculadora()
                 opcion = input("Por favor selecciona una opción de forma numérica: ")
@@ -90,14 +90,14 @@ def main():
                 else: # El último parámetro
                     print("Opción no válida, intentalo de nuevo.") # por si escribe algo que no va conforma a las preguntas
                     
-        elif opcion =="2":
+        elif codigo =="2":
             
-        elif opcion == 3:
+        elif codigo == 3:
             gestor_de_gastos()
             
-        elif opcion == 4:
+        elif codigo == 4:
          
-        elif opcion =="5":
+        elif codigo =="5":
             print("Saliendo del programa, gracias :) ")
             break
         else:
