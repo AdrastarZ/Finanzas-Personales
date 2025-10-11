@@ -78,41 +78,10 @@ def casos_prueba():
     print(sobrante(ganancias,costo) ,"\n")
 
 def menu():
-    print("\n 1. Costo por sector \n 2. Porcentaje de costo por sector \n " 
-    "3. Dinero sobrante \n 4. Casos de prueba \n 5. Salir")
+    print("\n 1. Imprimir costo por sector actual \n 2. Porcentaje de costo por sector \n " 
+    "3. Dinero sobrante \n 4. Casos de prueba \n 5. Salir\n")
 
-def main():
-    while(True):
-        menu()
-        opcion = int(input("Selecciona una opcion del menu: "))
-        if(opcion == 1):
-            lista = crea_lista()
-            costo = futuro_gasto(lista)
-            for m in sector_costo(lista, costo): #Para que cada lista salga ordenada se aplica un for para cada funcion
-                print(m)
 
-        elif(opcion == 2):
-            lista = crea_lista()
-            costo = futuro_gasto(lista)
-            for m in porcentajes(lista, costo):#Para que cada lista salga ordenada se aplica un for para cada funcion
-                print(m)
-
-        elif(opcion == 3):
-            lista = crea_lista()
-            costo = futuro_gasto(lista)
-            ganancias = int(input("¿Cuanto ganas mensualmente? "))
-            print(sobrante(ganancias,costo))
-
-        elif(opcion == 4):
-            casos_prueba()
-        elif(opcion == 5):
-            print("Saliendo de la sesión")
-            break
-        else:
-            print("Opción no valida, saliendo de la sesión")
-            break
-
-main()
 
 
 
