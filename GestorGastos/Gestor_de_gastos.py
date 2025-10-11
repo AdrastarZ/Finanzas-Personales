@@ -161,34 +161,6 @@ def menu():
     return input("Elige una opción: ")
 
 
-def gestor_de_gastos():
-    """
-    Bucle principal del programa (while infinito hasta salir).
-    Usa estructuras de decisión para llamar a cada función según la opción.
-    """
-    while True:  # comportamiento cíclico
-        opcion = menu()
-        if opcion == "1":
-            registrar_movimiento("ingreso")
-        elif opcion == "2":
-            registrar_movimiento("egreso")
-        elif opcion == "3":
-            mostrar_resumen()
-        elif opcion == "4":
-            establecer_presupuesto()
-        elif opcion == "5":
-            establecer_meta()
-        elif opcion == "6":
-            caso_prueba_demo()
-        elif opcion == "7":
-            print("¡Hasta luego!")
-            break
-        else:
-            print("Opción inválida. Intenta de nuevo.")
-
-
-if __name__ == "__main__":
-    gestor_de_gastos()
 
 
 
