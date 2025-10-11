@@ -1,5 +1,6 @@
-from GestorGastos.Gestor_de_gastos import gestor_de_gastos
+from GestorGastos import gestor_de_gastos
 from CalculadoraInteresCompuesto import interes_compuesto
+from GeneradorPresupuestos import GeneradorPresupuestos as GP
 
 #Listas para guardar historial de operaciones 
 historial_prestamos = [] # se guardarán los datos de los préstamos realizados
@@ -94,7 +95,42 @@ def main():
                     print("Opción no válida, intentalo de nuevo.") # por si escribe algo que no va conforma a las preguntas
                     
         elif codigo =="2":
-            
+            opcionesGenPres = 0
+            print("\nBienvenido a tu Generador de Presupuesto personal")
+            print("Empecemos creando tu lista con los sectores donde tienes planeado gastar")
+            lista = GP.crea_lista()
+            print("Ahora añade el costo previsto que tendra cada sector ")
+            costo = GP.futuro_gasto(lista)
+            while True:
+                GP.menu()
+                opcionesGenPres = int(input("Seleccione una numero del menu para continuar con el proceso: "))
+                if(opcionesGenPres == 1):
+                    for m in GP.sector_costo(lista, costo): #Para que cada lista salga ordenada se aplica un for para cada funcion
+                        print(m)
+
+                elif(opcionesGenPres == 2):
+                    for m in GP.porcentajes(lista, costo):#Para que cada lista salga ordenada se aplica un for para cada funcion
+                        print(m)
+
+                elif(opcionesGenPres == 3):
+                    ganancias = int(input("¿Cuanto ganas mensualmente? "))
+                    print(GP.sobrante(ganancias,costo))
+
+                elif(opcionesGenPres == 4):
+                    GP.casos_prueba()
+                elif(opcionesGenPres == 5):
+                    print("Saliendo de la sesión.  \n"
+                    "Gracias por usar el generador de presupuesto \n")
+                    break
+                else:
+                    print("\nOpción no valida, saliendo de la sesión\n")
+                    break
+
+                nuevaVieja = input("Quieres ocupar la misma lista de sectores y costo? (Y/N) ")
+                if nuevaVieja == "N" or nuevaVieja == "n":
+                    lista = GP.crea_lista()
+                    print("Ahora añade el costo previsto que tendra cada sector ")
+                    costo = GP.futuro_gasto(lista)
         elif codigo == 3:
             gestor_de_gastos()
             
@@ -105,7 +141,8 @@ def main():
             break
         else:
             print("opcion no válida. Intentalo de nuevo.")
-main()
+if __name__ == "__main__":
+    main() 
 
 
 
