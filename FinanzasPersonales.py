@@ -135,7 +135,16 @@ def main():
             gestor_de_gastos()
             
         elif codigo == 4:
-         
+            print("Simulador de Deudas")
+    
+            monto = float(input("Dame el monto de las deudas: "))
+            interes = float(input("Dame el interés anual en %: "))
+            meses = int(input("Dame  plazo en meses: "))
+    
+            tabla_pagos = crear_tabla_pagos(monto, interes, meses)
+            mostrar_tabla(tabla_pagos)
+
+        
         elif codigo =="5":
             print("Saliendo del programa, gracias :) ")
             break
