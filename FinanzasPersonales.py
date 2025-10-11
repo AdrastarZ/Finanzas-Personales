@@ -1,4 +1,4 @@
-from GestorGastos import menu, registrar_movimiento, mostrar_resumen, establecer_presupuesto, establecer_meta, caso_prueba_demo
+from GestorGastos import Gestor_de_gastos
 from CalculadoraInteresCompuesto import interes_compuesto
 from GeneradorPresupuestos import GeneradorPresupuestos as GP
 
@@ -131,22 +131,21 @@ def main():
                     lista = GP.crea_lista()
                     print("Ahora añade el costo previsto que tendra cada sector ")
                     costo = GP.futuro_gasto(lista)
-        elif codigo == 3:
-            def gestor_de_gastos():    
+        elif codigo == "3":  
             while True:  # comportamiento cíclico
-                opcion = menu()
+                opcion = Gestor_de_gastos.menu()
                 if opcion == "1":
-                    registrar_movimiento("ingreso")
+                    Gestor_de_gastos.registrar_movimiento("ingreso")
                 elif opcion == "2":
-                    registrar_movimiento("egreso")
+                    Gestor_de_gastos.registrar_movimiento("egreso")
                 elif opcion == "3":
-                    mostrar_resumen()
+                    Gestor_de_gastos.mostrar_resumen()
                 elif opcion == "4":
-                    establecer_presupuesto()
+                    Gestor_de_gastos.establecer_presupuesto()
                 elif opcion == "5":
-                    establecer_meta()
+                    Gestor_de_gastos.establecer_meta()
                 elif opcion == "6":
-                    caso_prueba_demo()
+                    Gestor_de_gastos.caso_prueba_demo()
                 elif opcion == "7":
                     print("¡Hasta luego!")
                     break
