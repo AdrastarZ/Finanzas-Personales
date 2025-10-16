@@ -1,7 +1,7 @@
 from GestorGastos import Gestor_de_gastos
 from CalculadoraInteresCompuesto import interes_compuesto
 from GeneradorPresupuestos import GeneradorPresupuestos as GP
-from as SD
+from SimuladorDeDeuda import Simulador_de_deuda as SD
 #Listas para guardar historial de operaciones 
 historial_prestamos = [] # se guardarán los datos de los préstamos realizados
 historial_inversiones = [] # se guardarán los datos de las inversiones realizadas
@@ -154,7 +154,7 @@ def main():
             
         elif codigo == 4:
             SD.tabla_pagos = crear_tabla_pagos(monto, interes, meses)
-            SD. mostrar_tabla(tabla_pagos)
+            SD.mostrar_tabla(tabla_pagos)
             print("Simulador de Deudas")
     
             monto = float(input("Dame el monto de las deudas: "))
