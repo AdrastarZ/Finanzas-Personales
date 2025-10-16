@@ -1,12 +1,43 @@
 import datetime
+import json
 
-# -------------------- Variables globales --------------------
+# Variables globales 
 movimientos = []         # Lista de movimientos (ingresos/egresos)
 presupuesto_mensual = 0  # Límite de egresos por mes
 meta_ahorro = 0          # Meta de ahorro deseada
+archivo_json = "movimientos.json"
+# Funciones JSON
+
+def guardar_json():
+    global movimientos
+    try:
+        with open(archivo_json, "w") as f:
+            json.dump(movimientos, f, default=str, indent=4)
+        return True
+    except Exception as e:
+        print(f"Error al guardar: {e}")
+        return False
+
+def cargar_json():
+    global movimientos
+    try:
+        with open(archivo_json, "r") as f:
+            movimientos_cargados = json.load(f)
+            for m in movimientos_cargados:
+                if isinstance(m["fecha"], str):
+                    m["fecha"] = datetime.datetime.strptime(m["fecha"], "%Y-%m-%d").date()
+            movimientos = movimientos_cargados
+        print("Movimientos cargados correctamente.")
+        return True
+    except FileNotFoundError:
+        print("Archivo no encontrado, se creará uno nuevo al guardar.")
+        return False
+    except Exception as e:
+        print(f"Error al cargar: {e}")
+        return False
 
 
-# -------------------- Funciones principales --------------------
+# Funciones principales
 def registrar_movimiento(tipo, monto=None, categoria=None, fecha=None):
     """
     Registra un ingreso o egreso.
@@ -27,6 +58,7 @@ def registrar_movimiento(tipo, monto=None, categoria=None, fecha=None):
             "categoria": categoria,
             "fecha": fecha
         })
+        guardar_json()  
         return True
     except ValueError:
         print("Monto inválido.")
@@ -64,7 +96,7 @@ def mostrar_resumen():
             print(f"{idx}. {mov['fecha']} - {mov['tipo'].capitalize()}: "
                   f"${mov['monto']:.2f} ({mov['categoria']})")
 
-    # ----- Estructuras de decisión para alertas -----
+    # Estructuras de decisión para alertas
     if presupuesto_mensual > 0:
         if egresos > presupuesto_mensual:
             print("Presupuesto mensual superado.")
@@ -108,7 +140,7 @@ def establecer_meta(valor=None):
         return False
 
 
-# -------------------- Pruebas automáticas --------------------
+# Pruebas automáticas
 def caso_prueba_demo():
     """
     Caso de prueba que registra varios movimientos, establece presupuesto y meta,
@@ -145,7 +177,7 @@ def caso_prueba_demo():
     print(f"Balance esperado: 1550, calculado: {balance}")
     print("=== FIN DEL CASO DE PRUEBA ===\n")
 
-# -------------------- Menú interactivo --------------------
+# Menú interactivo
 def menu():
     """
     Muestra el menú y devuelve la opción elegida.
@@ -159,6 +191,7 @@ def menu():
     print("6. Ejecutar pruebas")
     print("7. Salir")
     return input("Elige una opción: ")
+
 
 
 
