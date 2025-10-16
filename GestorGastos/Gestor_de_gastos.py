@@ -1,5 +1,5 @@
 import datetime
-from GestorGastos import json
+import json
 
 # Variables globales 
 movimientos = []         # Lista de movimientos (ingresos/egresos)
@@ -191,6 +191,7 @@ def menu():
     print("6. Ejecutar pruebas")
     print("7. Salir")
     return input("Elige una opción: ")
+
 
 
 
