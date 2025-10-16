@@ -1,5 +1,4 @@
 #Simulador de Deudas
-#Autor: David Flores Hernandez
 #Descripción:Este programa permite simular el pago de una deuda en distintos plazos y con distintas tasas de interés.
 #El usuario ingresa el monto de la deuda, la tasa de interés anual y el plazo en meses.
 #El sistema calcula el monto de las cuotas mensuales y quincenales, y muestra cómo varían dependiendo del plazo.
@@ -12,34 +11,56 @@ def calcular_cuota_mensual(monto, interes_anual, meses):
     #meses (int): número de meses del plazo
     
     interes_mensual = interes_anual / 12 / 100
-    if interes_mensual == 0:
+    if monto <= 0 or interes_anual < 0:
+        return str(f"Los datos que me diste no son validos: monto {monto}, interes anual {interes_anual}")
+    
+    elif interes_mensual == 0:
         return monto / meses
     cuota = monto * (interes_mensual * (1 + interes_mensual ) ** meses) / ((1 + interes_mensual) ** meses -1)
     return cuota
+
 
 def calcular_cuota_quincenal(monto, interes_anual, meses):
     
     quincenas = meses * 2
     interes_quincenal = interes_anual / 24 / 100
-    if interes_quincenal == 0:
+    
+    if monto <= 0 or interes_anual < 0:
+        return str(f"Los datos que me diste no son validos: monto {monto}, interes anual {interes_anual}")
+    
+    elif interes_quincenal == 0:
         return monto / quincenas
     cuota = monto * (interes_quincenal * (1 + interes_quincenal) ** quincenas) / ((1 + interes_quincenal) ** quincenas - 1)
     return cuota
+        
 
-
-def mostrar_escenarios(monto, interes, meses):
+def calcular_escenarios(monto, interes, meses):
+    cuotas = []
     
-    print("Escenarios de pago:")
-    for plazo in range(6, meses +1, 6):
+    for plazo in range(1, meses +1):
         cuota_mensual = calcular_cuota_mensual(monto, interes, plazo)
         cuota_quincenal = calcular_cuota_quincenal(monto, interes, plazo)
         
-        print("Plazo de", plazo, "meses")
-        print("Pago mensual: ", round(cuota_mensual, 2))
-        print("Pago quincenal: ", round(cuota_quincenal, 2))
+        if type(cuota_mensual) == str:
+            return cuota_mensual
         
+        cuotas.append([plazo, cuota_quincenal, cuota_mensual])
         
+    return cuotas
+   
+   
+def calcular_total_pagar(monto, interes, meses):
+    i = 0
+    contador = 0 
+    matriz_escenarios = calcular_escenarios(monto, interes, meses)
+    while i < len(matriz_escenarios):
+        contador += matriz_escenarios[i][2]
+        i += 1
         
+    return contador 
+
+        
+                
 def pruebas():
     
     print("Pruebas automáticas")     
@@ -49,7 +70,10 @@ def pruebas():
     assert calcular_cuota_mensual(1, 0, 1) == 1           # Caso 3: valores extremos
     print("Todas las pruebas pasaron correctamente.\n")
     
-    
+pruebas()
+
+
+
 def main():
     
     print("Simulador de Deudas")
@@ -58,7 +82,26 @@ def main():
     interes = float(input("Dame el interés anual en %: "))
     meses = int(input("Dame  plazo en meses: "))
     
-    mostrar_escenarios(monto, interes, meses)
+    
+    matriz = calcular_escenarios(monto, interes, meses)
+    
+    print("--------------Tabla de simulación--------------")
+    print(f"{'Mes'} | {'Pago Mensual'} | {'Pago Quincenal'}")
+    print("-----------------------------------------------")
+
+    
+    for fila in matriz:
+        mes = fila[0]
+        quincenal = fila[1]
+        mensual = fila[2]
+        print(f"{mes} | ${mensual:.2f} | ${quincenal:.2f}")
+        
+        
+    
+    
+    valor = calcular_total_pagar(monto, interes, meses)
+    print(valor)
+    
     
 main()
     
@@ -68,12 +111,6 @@ main()
         
         
         
-
-
-
-
-
-
 
 
 
