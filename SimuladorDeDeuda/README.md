@@ -10,40 +10,40 @@ Una vez que el usuario vea los diferentes plazos y las diferentes cuotas en base
                                                    Algoritmo
 
 1. Solicitar al usuario:
-  El monto total de la deuda
-  El interés anual
-  El número de meses para pagar
+  1.1:El monto total de la deuda
+  1.2:El interés anual
+  1.3:El número de meses para pagar
 
 2. Llamar a la función calcular_cuota_mensual(monto, interes_anual, meses)
-   Esta funcion calcula  interes mensual , diviendo  tasa anual entre 12
-   Si el interes es 0, la deuda se divide entre los meses para asi obtener pagos iguales
-   Si hay interes, se usa la formula y asi se asegura que cada vez sea el mismo agp mensual
-   Si los valores son invalidos, ya sean montos negativos o interes negativo, regresa por medio de un str un mensaje de error
-   Regresa los valores de la cuota mensual
+   2.1:Esta funcion calcula  interes mensual , diviendo  tasa anual entre 12
+   2.2:Si el interes es 0, la deuda se divide entre los meses para asi obtener pagos iguales
+   2.3:Si hay interes, se usa la formula y asi se asegura que cada vez sea el mismo agp mensual
+   2.4:Si los valores son invalidos, ya sean montos negativos o interes negativo, regresa por medio de un str un mensaje de error
+   2.5:Regresa los valores de la cuota mensual
     
 3. Llamar a la funcion alcular_cuota_quincenal(monto, interes_anual, meses)
-   Esta funcion lo que hace es convertir los meses en quincenas multiplicano por 2
-   Calcula el interes quincenal diviendo el interes_anual entre 24
-   Si los valores son invalidos, ya sean montos negativos o interes negativo, regresa por medio de un str un mensaje de error
-   Regresa los valores de la cuota quincenal
+   3.1:Esta funcion lo que hace es convertir los meses en quincenas multiplicano por 2
+   3.2:Calcula el interes quincenal diviendo el interes_anual entre 24
+   3.3:Si los valores son invalidos, ya sean montos negativos o interes negativo, regresa por medio de un str un mensaje de error
+   3.4:Regresa los valores de la cuota quincenal
    
-5. Llamar a la función calcular_escenarios(monto, interes, meses)
-   Esta función crea diferentes escenarios para cada plazo ya sea de 1 mes o hasta n cantidad
-   Calcula tanto la cuota mensual como la quincenal para ese plazo
-   Guarda los resultados en una matriz
-   Devuelve la matriz
+4. Llamar a la función calcular_escenarios(monto, interes, meses)
+   4.1:Esta función crea diferentes escenarios para cada plazo ya sea de 1 mes o hasta n cantidad
+   4.2:Calcula tanto la cuota mensual como la quincenal para ese plazo
+   4.3:Guarda los resultados en una matriz
+   4.4:Devuelve la matriz
 
-6. Llamar a la función calcular_total_pagar(monto, interes, meses)
-   Usa la matriz de devuelve la funcion calcular_escenarios(monto, interes, meses)
-   Suma cada una de las cuotas mensuales para obtener total a pagar al final del periodo
-   Devuelve  cantidad que el usuario va a pagar en total
+5. Llamar a la función calcular_total_pagar(monto, interes, meses)
+   5.1:Usa la matriz de devuelve la funcion calcular_escenarios(monto, interes, meses)
+   5.2:Suma cada una de las cuotas mensuales para obtener total a pagar al final del periodo
+   5.3:Devuelve  cantidad que el usuario va a pagar en total
 
-7. Llamar a la funcion main()
-   Se muestran los mensajes de que es lo que el usuario quiere ver si el costo mensual, quincenal o el escenario
-   Se imprime la tabla e¿ordenada con los datos que el usuario desee
-   Imprime  total a pagar
+6. Llamar a la funcion main()
+   6.1:Se muestran los mensajes de que es lo que el usuario quiere ver si el costo mensual, quincenal o el escenario
+   6.2:Se imprime la tabla e¿ordenada con los datos que el usuario desee
+   6.3:Imprime  total a pagar
    
-9. El usuario decide si continuar o no
+7. El usuario decide si continuar o no
 
 
 
