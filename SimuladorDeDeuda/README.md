@@ -4,6 +4,12 @@ La idea del programa es que el ususario pueda escribir la cantidad de su deuda, 
 
 Una vez que el usuario vea los diferentes plazos y las diferentes cuotas en base a lo que acabo de explicar, el usuario va a comparar distintos escenarios y diferentes cuotas y va a analizar cual opcion es la mas conveniente para el, y esto es muy importante en la vida financiera porque va a empezar a tomar buenas decisiones en base al dinero y a futuro, le va a ayudar mucho en su vida financiera.
 
+El objetivo del algoritmo es simular el comportamiento de una deuda dependiendo del monto, la tasa de interés y el plazo en meses que el 
+usuario tenga. Permite conocer cuánto tendría que pagar si realiza pagos mensuales o quincenales, mostrando una tabla con los distintos 
+escenarios. Cada función del programa se encarga de un cálculo específico: una calcula la cuota mensual, otra la quincenal, otra genera los 
+escenarios y otra suma el total a pagar. Esto facilita ver de una manera sencilla cómo varían los pagos según el plazo y la tasa de interés. De 
+esta manera, el usuario puede planificar sus pagos y entender el impacto del interés en la deuda total, ya que si suben los meses, sube el 
+interes, y si sube el interes, sube el costo total a pagar.
 
 
 
@@ -79,22 +85,6 @@ Una vez que el usuario vea los diferentes plazos y las diferentes cuotas en base
    12.3:Muestra los resultados en pantalla y los guarda en archivos si es necesario
 
 13. El usuario decide si continuar o no
-
-
-
-El objetivo del algoritmo es simular el comportamiento de una deuda dependiendo del monto, la tasa de interés y el plazo en meses que el 
-usuario tenga. Permite conocer cuánto tendría que pagar si realiza pagos mensuales o quincenales, mostrando una tabla con los distintos 
-escenarios. Cada función del programa se encarga de un cálculo específico: una calcula la cuota mensual, otra la quincenal, otra genera los 
-escenarios y otra suma el total a pagar. Esto facilita ver de una manera sencilla cómo varían los pagos según el plazo y la tasa de interés. De 
-esta manera, el usuario puede planificar sus pagos y entender el impacto del interés en la deuda total, ya que si suben los meses, sube el 
-interes, y si sube el interes, sube el costo total a pagar.
-
-
-
-
-
-
-
 
                                                    Algoritmo del mian()
 
