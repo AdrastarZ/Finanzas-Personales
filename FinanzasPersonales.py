@@ -152,18 +152,62 @@ def main():
                 else:
                     print("Opción inválida. Intenta de nuevo.")
             
-        elif codigo == 4:
-            SD.tabla_pagos = crear_tabla_pagos(monto, interes, meses)
-            SD.mostrar_tabla(tabla_pagos)
-            print("Simulador de Deudas")
-    
-            monto = float(input("Dame el monto de las deudas: "))
-            interes = float(input("Dame el interés anual en %: "))
-            meses = int(input("Dame  plazo en meses: "))
-    
-            tabla_pagos = crear_tabla_pagos(monto, interes, meses)
-            mostrar_tabla(tabla_pagos)
-
+        elif codigo == "4":
+            monto, interes, meses = SD.pedir_datos()
+            while True:
+                print("\n----------- MENÚ PARA SIMULADOR DE DEUDA -----------")
+                print("\nSeleccione la opción de la consulta que quiere hacer\n")
+                print("Opción 1: Calcular la cuota mensual")
+                print("Opción 2: Calcular la cuota quincenal")
+                print("Opción 3: Calcular escenarios mensual/quincenal")
+                print("Opción 4: Calcular el total a pagar")
+                print("Opción 5: Calcular intereses totales en plan mensual")
+                print("Opción 6: Calcular intereses totales en plan quincenal")
+                print("Opción 7: Guardar escenarios en un archivo")
+                print("Opción 8: Guardar totales en un archivo")
+                print("Opción 9: Correr pruebas")
+                print("Opción 10: Salir")
+                opcion = int(input("\nOpción a seleccionar: "))
+                if opcion == 1:
+                    cuota_mensual = SD.calcular_cuota_mensual(monto, interes, meses)
+                    print(f"\nLa cuota mensual sería: {cuota_mensual:.2f}\n")
+                elif opcion == 2:
+                    cuota_quincenal = SD.calcular_cuota_quincenal(monto, interes, meses)
+                    print(f"\nLa cuota quincenal sería: {cuota_quincenal:.2f}\n")
+                elif opcion == 3:
+                    escenarios = SD.calcular_escenarios(monto, interes, meses)
+                    print(f"\n------------------ Tabla de escenarios ------------------")
+                    for fila in escenarios:
+                        plazo, quincenal, mensual = fila
+                        print(f"Plazo: {plazo} | Pago quincenal: {quincenal:.2f} | Pago mensual: {mensual:.2f}")
+                elif opcion == 4:
+                    total_pagar = SD.calcular_total_pagar(monto, interes, meses)
+                    print(f"\n------------------ Tabla de totales ------------------")
+                    for fila in total_pagar:
+                        plazo, quincenal, mensual = fila
+                        print(f"Plazo: {plazo} | Total quincenal: {quincenal:.2f} | Total mensual: {mensual:.2f}")
+                elif opcion == 5:
+                    interes_mensual = SD.calcular_interes_total_mensual(monto, interes, meses)
+                    print(f"\nEl interés total a pagar en este plazo es de {interes_mensual:.2f} pesos\n")
+                elif opcion == 6:
+                    interes_quincenal = SD.calcular_interes_total_quincenal(monto, interes, meses)
+                    print(f"\nEl interés total a pagar en este plazo es de {interes_quincenal:.2f} pesos\n")
+                elif opcion == 7:
+                    print("\nGuardando escenarios en un archivo")
+                    guardado_escenarios = SD.guardar_escenarios(monto, interes, meses)
+                    print(guardado_escenarios)
+                elif opcion == 8:
+                    print("\nGuardando totales en un archivo")
+                    guardado_totales = SD.guardar_totales(monto, interes, meses)
+                    print(guardado_totales)
+                elif opcion == 9:
+                    resultados = SD.pruebas()
+                    print(resultados)
+                elif opcion == 10:
+                    print("\nSaliendo del simulador de deuda")
+                    break
+                else:
+                    print("\nSelecciona una opción válida")
         
         elif codigo =="5":
             print("Saliendo del programa, gracias :) ")
