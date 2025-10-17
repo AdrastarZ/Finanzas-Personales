@@ -38,7 +38,10 @@ def cargar_json():
 
 
 # Funciones principales
-def registrar_movimiento(tipo, monto=None, categoria=None, fecha=None):
+def registrar_movimiento(tipo):
+    monto=None
+    categoria=None
+    fecha=None
     """
     Registra un ingreso o egreso.
     Parámetros opcionales para facilitar pruebas.
@@ -110,7 +113,8 @@ def mostrar_resumen():
             print(f"Meta de ahorro (${meta_ahorro:.2f}) aún no alcanzada.")
 
 
-def establecer_presupuesto(valor=None):
+def establecer_presupuesto():
+    valor=None
     """
     Define el presupuesto mensual máximo de egresos.
     """
@@ -126,6 +130,7 @@ def establecer_presupuesto(valor=None):
 
 
 def establecer_meta(valor=None):
+    valor=None
     """
     Define la meta de ahorro.
     """
@@ -191,6 +196,7 @@ def menu():
     print("6. Ejecutar pruebas")
     print("7. Salir")
     return input("Elige una opción: ")
+
 
 
 
