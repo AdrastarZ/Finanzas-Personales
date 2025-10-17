@@ -82,9 +82,62 @@ Una vez que el usuario vea los diferentes plazos y las diferentes cuotas en base
 
 
 
-El objetivo del algoritmo es simular el comportamiento de una deuda dependiendo del monto, la tasa de interés y el plazo en meses que el usuario tenga. Permite conocer cuánto tendría que pagar si realiza pagos mensuales o quincenales, mostrando una tabla con los distintos escenarios. Cada función del programa se encarga de un cálculo específico: una calcula la cuota mensual, otra la quincenal, otra genera los escenarios y otra suma el total a pagar. Esto facilita ver de una manera sencilla cómo varían los pagos según el plazo y la tasa de interés. De esta manera, el usuario puede planificar sus pagos y entender el impacto del interés en la deuda total, ya que si suben los meses, sube el interes, y si sube el interes, sube el costo total a pagar.
+El objetivo del algoritmo es simular el comportamiento de una deuda dependiendo del monto, la tasa de interés y el plazo en meses que el 
+usuario tenga. Permite conocer cuánto tendría que pagar si realiza pagos mensuales o quincenales, mostrando una tabla con los distintos 
+escenarios. Cada función del programa se encarga de un cálculo específico: una calcula la cuota mensual, otra la quincenal, otra genera los 
+escenarios y otra suma el total a pagar. Esto facilita ver de una manera sencilla cómo varían los pagos según el plazo y la tasa de interés. De 
+esta manera, el usuario puede planificar sus pagos y entender el impacto del interés en la deuda total, ya que si suben los meses, sube el 
+interes, y si sube el interes, sube el costo total a pagar.
 
 
+
+
+
+
+
+
+                                                   Algoritmo del mian()
+
+
+1. El ususario escoge la opcion 4 == Simulador de Deuda
+   1.1 La funcion llama a la funcion pedir_datos() 
+
+2. Se muestra el MENU de todas las opciones
+
+3. Si opcion == 1 - Llama a calcular_cuota_mensual(monto, interes, meses)
+   3.1:Imprime el pago mensual
+
+4. Si opcion == 2 - Llama a calcular_cuota_quincenal(monto, interes, meses)
+   4.1:Imprime el pago quincenal
+   
+5. Si opcion == 3 - Llama a calcular_escenarios(monto, interes, meses)
+   5.1:Imprime las filas con columnas mostrando los diferentes escenarios
+
+6. Si opcion == 4 - Llama a calcular_total_pagar(monto, interes, meses)
+   6.1:Imprime una tabla con los totales acumulados para cada mes
+
+7. Si opcion == 5 - Llama a calcular_interes_total_mensual(monto, interes, meses)
+   7.1:Imprime el interes total mensual que el usuaio va a pagar 
+
+8. Si opcion == 6 - Llama a calcular_interes_total_quincenal(monto, interes, meses)
+   8.1:Imprime el interes total quincenal que el usuaio va a pagar
+
+9. Si opcion == 7 - Llama a guardar_escenarios(monto, interes, meses)
+   9.1:Crea un archivo escenarios_deuda.csv
+   9.2:Imprime el mensaje de confirmacion
+
+10. Si opcion == 8 - Llama a guardar_totales(monto, interes, meses)
+   10.1:Llama a guardar_totales(monto, interes, meses)
+   10.2:Crea un archivo totales_deuda.csv
+   10.3:Imprime el mensaje de confirmacion
+
+11. Si opcion == 9 - Llama a pruebas()
+   11.1:Imprime que las pruebas pasaron correctamente
+
+12. Si opcion == 10 - Se termina el ciclo
+
+13. Si el usuario ingresa un numero invalido
+   13.1:Imprime "Selecciona una opción válida"
 
 
 
