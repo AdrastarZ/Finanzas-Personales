@@ -140,7 +140,7 @@ def main():
                             print("Ahora añade el costo previsto que tendra cada sector ")
                             costo = GP.futuro_gasto(lista)
                             break
-                        elif nuevaVieja == "n":
+                        elif nuevaVieja.lower() == "n":
                             break
                         else: 
                             print("Opción no valida, por favor intente de nuevo")
