@@ -31,9 +31,7 @@ def prestamocompuestas(dineropedido, interes, periodos, frecuencia="M"):# Esta f
     else:
         pagos = periodos       # si son pagos anuales
     pagoperiodo = monto / pagos # Se obtiene el pago por periodo dividiendo el total entre los pagos
-
-    # Se crea una matriz con los primeros 5 pagos o menos si el periodo que nos da el usuario es menor
-    matriz_amortizacion = []
+    matriz_amortizacion = [] # Se construye una tabla con los primeros 5 periodos para mostrar la evolución
     for i in range(1, min(6, pagos + 1)):  # el for genera una lista con los pagos iniciales
         pago = dineropedido * (1 + interes)**(i*(periodos/pagos)) / i  # Cálculo aproximado del pago en cada iteración 
         matriz_amortizacion.append([i, round(pago, 2)])  # se guarda el número de pago del usuario
@@ -68,3 +66,4 @@ def menu_Calculadora():#Esta función despliega el menú principal de la calcula
     print("2. Calculadora de interés compuesto para Inversiones")
     print("3. Mostrar historial de operaciones")
     print("4. Salir de la calculadora de interés compuesto")
+
