@@ -73,7 +73,9 @@ def sobrante(ganancias, costo):
 
 #Se guarda la lista de sectores, la lista de costo, la lista de porcentaje y el sobrante dentro de un documento txt de manera que se vea ordenado
 def guardaRegistro(lista,costo,porcentaje,sobrante):
-    Registro = "Finanzas-Personales-main/GeneradorPresupuestos/Registro.txt" #Ubicacion del archivo Registro.txt acorde a la jerarquia del proyecto
+    #Si el codigo se corre desde VSCode, usar el path "Finanzas-Personales-main/GeneradorPresupuestos/Registro.txt" para la variable Registro
+    #Si el codigo se corre desde una consola, usar el path "GeneradorPresupuestos/Registro.txt" para la variable Registro
+    Registro = "GeneradorPresupuestos/Registro.txt" #Ubicacion del archivo Registro.txt acorde a la jerarquia del proyecto
     
     #Si la funcion de porcentaje utiliza su valor defualt, None. Se creara una lista del mismo tamaño que la lista de sectores y añadira la cadena "N/A" 
     if porcentaje is None: 
@@ -105,7 +107,9 @@ def guardaRegistro(lista,costo,porcentaje,sobrante):
 
 #Elimina todos los datos guardados previamente en Registro.txt
 def borraRegistro(seguro):
-    Registro = "Finanzas-Personales-main/GeneradorPresupuestos/Registro.txt" #Ubicacion del archivo Registro.txt acorde a la jerarquia del proyecto
+    #Si el codigo se corre desde VSCode usar el path "Finanzas-Personales-main/GeneradorPresupuestos/Registro.txt" para la variable Registro
+    #Si el codigo se corre desde una consola usar el path "GeneradorPresupuestos/Registro.txt" para la variable Registro
+    Registro = "GeneradorPresupuestos/Registro.txt" #Ubicacion del archivo Registro.txt acorde a la jerarquia del proyecto
     while True:
         if seguro.lower() == "y":      
             archivo = open(Registro, "w") #Abre el archivo en modo write para sobre escribir todo el archivo
@@ -151,6 +155,7 @@ def casos_prueba():
 def menu():
     print("\n 1. Imprimir costo por sector actual \n 2. Porcentaje de costo por sector \n " 
     "3. Dinero sobrante \n 4. Guardar cambios \n 5. Borrar registro \n 6. Crear nueva lista \n 7. Casos de prueba \n 8. Salir\n")
+
 
 
 
