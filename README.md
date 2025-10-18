@@ -112,6 +112,37 @@ Algoritmo del main() - Generador de presupuesto
    3.11 Si no
 
    3.11.1 Imprime mensaje
+   
+Algoritmo del main()- Gestor de Gastos
+
+1.	El programa verifica si la variable codigo tiene el valor "3". Esto indica que el usuario eligió la opción de entrar al Gestor de Gastos dentro del menú principal.
+2.	Se inicia un bucle (while) que se repetirá continuamente hasta que el usuario decida salir. Esto permite que el usuario ejecute varias acciones sin reiniciar el programa.
+4.	La función Gestor_de_gastos.menu() se encarga de mostrar las opciones disponibles en el gestor de gastos y solicita al usuario que ingrese una opción.
+5.	La opción elegida se guarda en la variable opcion.
+   
+Dependiendo del valor de opcion, el programa realiza distintas acciones:
+
+  1.	Opción "1" – Registrar ingreso:
+      Llama a registrar_movimiento("ingreso") para que el usuario ingrese datos de un ingreso (monto, categoría, fecha) y lo guarde en la lista de movimientos.
+  2.	Opción "2" – Registrar egreso:
+      Llama a registrar_movimiento("egreso") para que el usuario ingrese datos de un egreso y lo agregue a los movimientos.
+  4.	Opción "3" – Mostrar resumen:
+      Llama a mostrar_resumen(), que calcula y muestra totales de ingresos, egresos, balance y alertas según presupuesto o meta de ahorro.
+  5.	Opción "4" – Establecer presupuesto:
+      Llama a  establecer_presupuesto() para definir un límite máximo de egresos mensuales.
+  6.	Opción "5" – Establecer meta de ahorro:
+      Llama a establecer_meta() para definir cuánto dinero desea ahorrar el usuario.
+  7.	Opción "6" – Ejecutar prueba automática:
+      Llama a caso_prueba_demo(), que registra movimientos de prueba automáticamente, calcula totales y muestra resultados para verificar que todo funciona.
+  8.	Opción "7" – Salir del menú:
+      Muestra el mensaje "¡Hasta luego!".
+      Se ejecuta break, que rompe el bucle y sale del menú del gestor.
+  9.	Opción inválida:
+      Si el usuario ingresa cualquier otra opción que no esté entre 1 y 7, se imprime "Opción inválida. Intenta de nuevo.".
+      Luego, el menú se vuelve a mostrar automáticamente.
+    	
+•	Después de ejecutar cualquier acción, el programa vuelve a mostrar el menú automáticamente.
+•	Esto permite que el usuario realice tantas acciones como quiera hasta que elija salir con la opción 7.
 
 
 Algoritmo del main() - Simulador de Deuda
