@@ -6,7 +6,8 @@ from SimuladorDeDeuda import Simulador_de_deuda as SD
 historial_prestamos = [] # se guardarán los datos de los préstamos realizados
 historial_inversiones = [] # se guardarán los datos de las inversiones realizadas
 def main():
-    while True:
+    activo = True  # variable que mantiene activo el programa hasta que el usuario decida salir
+    while activo:
         print("\nMENÚ PRINCIPAL")
         print("Bienvenido al apartado de FINANZAS PERSONALES :) ")
         print("1. Calculadora de interés compuesto")
@@ -71,7 +72,7 @@ def main():
                     "Frecuencia": frecuencia
                     })
 
-                elif opcion == "3": # nueva opción para mostrar el historial completo
+                elif opcion == "3": #muestra el historial completo
                     print("\nHISTORIAL DE OPERACIONES")
                     if historial_prestamos: # se muestra el historial de préstamos
                         print("\nHistorial de préstamos:")
@@ -93,7 +94,7 @@ def main():
 
                 else: # El último parámetro
                     print("Opción no válida, intentalo de nuevo.") # por si escribe algo que no va conforma a las preguntas
-                    
+
         if codigo =="2":
             porcentaje = None
             sobrante = None
@@ -234,7 +235,8 @@ def main():
         
         elif codigo =="5":
             print("Saliendo del programa, gracias :) ")
-            break
+            activo = False # se cambia a False para terminar el programa
+            break # se rompe el ciclo principal
         else:
             print("opcion no válida. Intentalo de nuevo.")
 if __name__ == "__main__":
