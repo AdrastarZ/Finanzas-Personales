@@ -9,6 +9,9 @@ archivo_json = "movimientos.json"
 # Funciones JSON
 
 def guardar_json():
+    '''
+    Esta funcion se encarga de guardar los movimientos realizados dentro de un archivo
+    '''
     global movimientos
     try:
         with open(archivo_json, "w") as f:
@@ -19,6 +22,9 @@ def guardar_json():
         return False
 
 def cargar_json():
+    '''
+    Se encarga de leer la informacion dentro del archivo y la sube a las variables globales
+    '''
     global movimientos
     try:
         with open(archivo_json, "r") as f:
@@ -39,14 +45,15 @@ def cargar_json():
 
 # Funciones principales
 def registrar_movimiento(tipo):
+     """
+    Registra un ingreso o egreso.
+    Parámetros para facilitar pruebas.
+    Devuelve True si se registró con éxito, False si hubo error.
+    """
     monto=None
     categoria=None
     fecha=None
-    """
-    Registra un ingreso o egreso.
-    Parámetros opcionales para facilitar pruebas.
-    Devuelve True si se registró con éxito, False si hubo error.
-    """
+   
     global movimientos
     try:
         if monto is None:
@@ -129,10 +136,10 @@ def establecer_presupuesto():
         return False
 
 
-def establecer_meta(valor=None):
+def establecer_meta():
     valor=None
     """
-    Define la meta de ahorro.
+    Esta duncion se encarga de definir la meta de ahorro.
     """
     global meta_ahorro
     try:
@@ -196,6 +203,7 @@ def menu():
     print("6. Ejecutar pruebas")
     print("7. Salir")
     return input("Elige una opción: ")
+
 
 
 
