@@ -8,10 +8,8 @@ meta_ahorro = 0          # Meta de ahorro deseada
 archivo_json = "movimientos.json"
 # Funciones JSON
 
-def guardar_json():
-    '''
-    Esta funcion se encarga de guardar los movimientos realizados dentro de un archivo
-    '''
+ #Esta funcion se encarga de guardar los movimientos realizados dentro de un archivo
+def guardar_json(): 
     global movimientos
     try:
         with open(archivo_json, "w") as f:
@@ -21,10 +19,9 @@ def guardar_json():
         print(f"Error al guardar: {e}")
         return False
 
+#Se encarga de leer la informacion dentro del archivo y la sube a las variables globales
 def cargar_json():
-    '''
-    Se encarga de leer la informacion dentro del archivo y la sube a las variables globales
-    '''
+    
     global movimientos
     try:
         with open(archivo_json, "r") as f:
@@ -44,12 +41,13 @@ def cargar_json():
 
 
 # Funciones principales
+
+ 
+# Registra un ingreso o egreso.
+# Parámetros para facilitar pruebas.
+# Devuelve True si se registró con éxito, False si hubo error.
 def registrar_movimiento(tipo,monto=None,categoria=None,fecha=None):
-     """
-    Registra un ingreso o egreso.
-    Parámetros para facilitar pruebas.
-    Devuelve True si se registró con éxito, False si hubo error.
-    """
+    
     global movimientos
     try:
         if monto is None:
@@ -70,24 +68,20 @@ def registrar_movimiento(tipo,monto=None,categoria=None,fecha=None):
         print("Monto inválido.")
         return False
 
-
+# Calcula totales de ingresos, egresos y balance.
+# Devuelve (ingresos, egresos, balance).
 def calcular_totales():
-    """
-    Calcula totales de ingresos, egresos y balance.
-    Devuelve (ingresos, egresos, balance).
-    """
     ingresos = sum(m["monto"] for m in movimientos if m["tipo"] == "ingreso")
     egresos = sum(m["monto"] for m in movimientos if m["tipo"] == "egreso")
     return ingresos, egresos, ingresos - egresos
 
 
+# Totales de ingresos, egresos y balance
+#Muestra
+# Lista detallada de movimientos (usa for)
+# Alertas según presupuesto o meta de ahorro
 def mostrar_resumen():
-    """
-    Muestra:
-      - Totales de ingresos, egresos y balance
-      - Lista detallada de movimientos (usa for)
-      - Alertas según presupuesto o meta de ahorro
-    """
+   
     ingresos, egresos, balance = calcular_totales()
     print("\n--- RESUMEN ---")
     print(f"Ingresos: ${ingresos:.2f}")
@@ -115,12 +109,10 @@ def mostrar_resumen():
         else:
             print(f"Meta de ahorro (${meta_ahorro:.2f}) aún no alcanzada.")
 
-
+ 
+#Define el presupuesto mensual máximo de egresos.
 def establecer_presupuesto(valor=None):
     
-    """
-    Define el presupuesto mensual máximo de egresos.
-    """
     global presupuesto_mensual
     try:
         if valor is None:
@@ -131,11 +123,9 @@ def establecer_presupuesto(valor=None):
         print("Valor inválido.")
         return False
 
-
+#Esta duncion se encarga de definir la meta de ahorro.
 def establecer_meta(valor=None):
-    """
-    Esta duncion se encarga de definir la meta de ahorro.
-    """
+   
     global meta_ahorro
     try:
         if valor is None:
@@ -148,11 +138,9 @@ def establecer_meta(valor=None):
 
 
 # Pruebas automáticas
+#Caso de prueba que registra varios movimientos, establece presupuesto, meta y muestra resultados automáticamente.
 def caso_prueba_demo():
-    """
-    Caso de prueba que registra varios movimientos, establece presupuesto y meta,
-    y muestra resultados automáticamente.
-    """
+  
     global movimientos, presupuesto_mensual, meta_ahorro
 
     print("\n=== INICIANDO CASO DE PRUEBA DEMO ===")
@@ -185,10 +173,9 @@ def caso_prueba_demo():
     print("=== FIN DEL CASO DE PRUEBA ===\n")
 
 # Menú interactivo
+# Muestra el menú y devuelve la opción elegida.
 def menu():
-    """
-    Muestra el menú y devuelve la opción elegida.
-    """
+
     print("\n--- GESTOR DE GASTOS ---")
     print("1. Registrar ingreso")
     print("2. Registrar egreso")
@@ -198,6 +185,7 @@ def menu():
     print("6. Ejecutar pruebas")
     print("7. Salir")
     return input("Elige una opción: ")
+
 
 
 
