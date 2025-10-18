@@ -9,6 +9,28 @@ En este repositorio se encontraran 4 diferentes proyectos con el objetivo del de
   
 4. Simulador de deudas.
 
+Algoritmo del main(). Calculadora de interés compuesto
+
+- Entradas:No recibe parámetros directamente el main conrrespecto a la Calculadora de interés compuesto, pero el usuario ingresa información mediante un input en cada menú individual de cada archivo.
+  
+- procesos:
+1. Se inicia con una variable activo = True para mantener el programa funcionando mientras el usuario no elija “Salir"
+2. El usuario selecciona == "1":
+3. Usa otro while True que controla las operaciones de la calculadora (préstamos, inversiones, historial).
+4. El main lo reedirecciona a el menu de la carpeta de CalculadoraInteresCompuesto.
+5. El usuario selecciona alguna de las 4 opciones que le son proporcionadas por el menú del archivo de interes_compuesto.
+6. En el momento que seleccione una operación todo quedara registrado en las listas: Historial_prestamos = [], realizadoshistorial_inversiones = [] para al final obtener todos los resultados que el usuario seleccionó, usando diccionarios para almacenar la información.
+7. Si se selecciona “Salir”, cambia activo = False y rompe el ciclo principal.
+   
+- Salidas:
+1. Despliega resultados, menús, y tablas en pantalla.
+2. Retiene los datos procesados dentro de los historiales.
+3. Finaliza el programa cuando el usuario selecciona la opción 5.
+
+
+
+
+
 Algoritmo del main() - Generador de presupuesto
 
 1. Valor de lista es igual a la funcion crea_lista llamada desde Generador de Presupuestos
