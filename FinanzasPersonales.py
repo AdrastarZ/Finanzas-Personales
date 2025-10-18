@@ -94,43 +94,66 @@ def main():
                 else: # El último parámetro
                     print("Opción no válida, intentalo de nuevo.") # por si escribe algo que no va conforma a las preguntas
                     
-        elif codigo =="2":
+        if codigo =="2":
+            porcentaje = None
+            sobrante = None
             opcionesGenPres = 0
+
             print("\nBienvenido a tu Generador de Presupuesto personal")
             print("Empecemos creando tu lista con los sectores donde tienes planeado gastar")
             lista = GP.crea_lista()
             print("Ahora añade el costo previsto que tendra cada sector ")
             costo = GP.futuro_gasto(lista)
+
             while True:
                 GP.menu()
-                opcionesGenPres = int(input("Seleccione una numero del menu para continuar con el proceso: "))
+                opcionesGenPres = int(input("Seleccione un numero del menu para continuar con el proceso: "))
                 if(opcionesGenPres == 1):
                     for m in GP.sector_costo(lista, costo): #Para que cada lista salga ordenada se aplica un for para cada funcion
                         print(m)
 
                 elif(opcionesGenPres == 2):
-                    for m in GP.porcentajes(lista, costo):#Para que cada lista salga ordenada se aplica un for para cada funcion
+                    mensajePor, porcentaje = GP.porcentajes(lista, costo)
+                    for m in mensajePor:#Para que cada lista salga ordenada se aplica un for para cada funcion
                         print(m)
-
+                      
                 elif(opcionesGenPres == 3):
                     ganancias = int(input("¿Cuanto ganas mensualmente? "))
-                    print(GP.sobrante(ganancias,costo))
-
+                    mensajeSob, sobrante = GP.sobrante(ganancias,costo)
+                    print(mensajeSob)
+                    
                 elif(opcionesGenPres == 4):
-                    GP.casos_prueba()
+                    GP.guardaRegistro(lista, costo, porcentaje, sobrante)
+                    
                 elif(opcionesGenPres == 5):
-                    print("Saliendo de la sesión.  \n"
-                    "Gracias por usar el generador de presupuesto \n")
+                    seguro = str(input("Estas seguro que quieres borrar los datos de tu Registro? Esta acción NO es reversible (Y/N) "))
+                    GP.borraRegistro(seguro)     
+                        
+                elif(opcionesGenPres == 6):
+                    while True:
+                        nuevaVieja = input("Estas seguro que quieres crear una nueva lista? Los valores anterirores que hayas anotado seran eliminados (Y/N) ")
+                        if nuevaVieja.lower() == "y":
+                            sobrante = None
+                            porcentaje = None
+                            lista = GP.crea_lista()
+                            print("Ahora añade el costo previsto que tendra cada sector ")
+                            costo = GP.futuro_gasto(lista)
+                            break
+                        elif nuevaVieja == "n":
+                            break
+                        else: 
+                            print("Opción no valida, por favor intente de nuevo")
+
+                elif(opcionesGenPres == 7):
+                    GP.casos_prueba()
+
+                elif(opcionesGenPres == 8):
+                    print("\nSaliendo de la sesión.  \n"
+                    "Gracias por usar el generador de presupuesto :) \n")
                     break
                 else:
-                    print("\nOpción no valida, saliendo de la sesión\n")
-                    break
-
-                nuevaVieja = input("Quieres ocupar la misma lista de sectores y costo? (Y/N) ")
-                if nuevaVieja == "N" or nuevaVieja == "n":
-                    lista = GP.crea_lista()
-                    print("Ahora añade el costo previsto que tendra cada sector ")
-                    costo = GP.futuro_gasto(lista)
+                    print("\nOpción no valida. Intente de nuevo\n")
+                    
         elif codigo == "3":  
             while True:  # comportamiento cíclico
                 opcion = Gestor_de_gastos.menu()
