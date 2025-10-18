@@ -9,6 +9,89 @@ En este repositorio se encontraran 4 diferentes proyectos con el objetivo del de
   
 4. Simulador de deudas.
 
+Algoritmo del main() - Generador de presupuesto
+
+1. Valor de lista es igual a la funcion crea_lista llamada desde Generador de Presupuestos
+2. Valor de costo es igual a la función futuro_gasto llamada desde Generador de Presupuestos
+3. Mientras que el ciclo sea verdadero
+   
+   3.1 Llama a la función menu llamada desde Generador de Presupuestos
+   
+   3.2 Solicita al usuario que escoja una opción para el generador de presupuestos
+
+   3.3 Si la opción del generador de presupuestos es igual a 1
+
+   3.3.1 Para m en la función sector_costo llamada desde Generador de Presupuestos
+
+   3.3.1.1 Imprime "m"
+
+   3.4 Si no, Si la opción del generador de presupuestos es igual a 2
+
+   3.4.1 mensajePor y porcentaje son iguales a la función porcentajes llamada desde Generador de Presupuestos
+
+   3.4.2 Para m en mensajePor
+
+   3.4.2.1 Imprime "m"
+
+   3.5 Si no, Si la opción del generador de presupuestos es igual a 3
+
+   3.5.1 Se le solicita el valor ganancias al usuario
+
+   3.5.2 mensajeSob y sobrante son iguales a la función sobrante llamada desde Generador de Presupuestos
+
+   3.5.3 Imprimir mensajeSob
+
+   3.6 Si no, Si la opción del generador de presupuestos es igual a 4
+
+   3.6.1 Usa la función guardaRegistro llamada desde Generador de Presupuestos
+
+   3.7 Si no, Si la opción del generador de presupuestos es igual a 5
+
+   3.7.1 Solicita al usuario el valor seguro
+
+   3.7.1 Usa la función borraRegistro llamada desde Generador de Presupuestos
+
+   3.8 Si no, Si la opción del generador de presupuestos es igual a 6
+
+   3.8.1 Mientras que el ciclo sea verdadero
+
+   3.8.1.1 Solicita al usuario el valor nuevaVieja
+
+   3.8.1.2 Si el valor nuevaVieja en minúsculas es igual a "y"
+
+   3.8.1.2.1 Valor "sobrante" es igual a None
+
+   3.8.1.2.2 Valor "porcentaje" es igual a None
+
+   3.8.1.2.3 Valor de lista es igual a la función crea_lista llamada desde Generador de Presupuestos
+
+   3.8.1.2.4 Valor de costo es igual a la función futuro_gasto llamada desde Generador de Presupuestos
+
+   3.8.1.2.5 Rompe el ciclo
+
+   3.8.1.3 Si no, Si el valor nuevaVieja en minúsculas es igual a "n"
+
+   3.8.1.3.1 Rompe el ciclo
+
+   3.8.1.4 Si no
+
+   3.8.1.4.1 Imprime mensaje
+
+   3.9 Si no, Si la opción del generador de presupuestos es igual a 7
+
+   3.9.1 Usa la función casos_prueba llamada desde Generador de Presupuestos
+
+   3.10 Si no, Si la opción del generador de presupuestos es igual a 8
+
+   3.10.1 Imprime Mensaje
+
+   3.10.2 Rompe el ciclo
+
+   3.11 Si no
+
+   3.11.1 Imprime mensaje
+
+
 Algoritmo del main() - Simulador de Deuda
 
 1. El usuario escoge la opción 4 == Simulador de Deuda
