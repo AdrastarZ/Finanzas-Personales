@@ -10,6 +10,8 @@ Funcionalidades:
 1. Definir a detalle las areas de gasto y su cantidad
 2. El porcentaje que se gasta y comparacion con el capital inicial
 3. Descubrir si hay capital sobrante despues del presupuesto establecido
+4. Añadir datos a un registro
+5. Borrar datos del registro
 
 Algoritmo:
 
