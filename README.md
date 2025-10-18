@@ -11,9 +11,9 @@ En este repositorio se encontraran 4 diferentes proyectos con el objetivo del de
 
 Algoritmo del main(). Calculadora de interés compuesto
 
-- Entradas:No recibe parámetros directamente el main conrrespecto a la Calculadora de interés compuesto, pero el usuario ingresa información mediante un input en cada menú individual de cada archivo.
+- Entradas: No recibe parámetros directamente el main conrrespecto a la Calculadora de interés compuesto, pero el usuario ingresa información mediante un input en cada menú individual de cada archivo.
   
-- procesos:
+- Procesos:
 1. Se inicia con una variable activo = True para mantener el programa funcionando mientras el usuario no elija “Salir"
 2. El usuario selecciona == "1":
 3. Usa otro while True que controla las operaciones de la calculadora (préstamos, inversiones, historial).
