@@ -4,9 +4,10 @@ Las finanzas es una herramienta sumamente importante en la actualidad. La import
 En este repositorio se encontraran 4 diferentes proyectos con el objetivo del dessarrollo de multiples herramientas financieras.
 
 1. Calculadora de intéres compuesto.
-2. Gestor de gastos.
+2. Generador de presupuesto
+3. Gestor de gastos.
   
-3. Simulador de deudas.
+4. Simulador de deudas.
 
 Algoritmo del main() - Simulador de Deuda
 
